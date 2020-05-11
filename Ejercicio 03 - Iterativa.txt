@@ -1,4 +1,4 @@
-// EJERCICIO 03 - FORMA ITERATIVA
+// EJERCICIO 03 
 
 #include<iostream>
 #include<conio.h>
