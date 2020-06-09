@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+
+
+    function validarn() {
+      let isValid = false;
+
+      const input = document.forms['formulario']['nombre'];
+
+      const message = document.getElementById('message');
+
+      input.willValidate = false;
+      const pattern = new RegExp('^[0-9]');
+      if(!input.value) {
+        isValid = false;
+      } else {     
+          if(!pattern.test(input.value)){ 
+            isValid = false;
+          } else {
+            isValid = true;
+          }
+      }
+
+      if(!isValid) {
+        input.style.borderColor = 'red'; 
+        message.hidden = false;
+      } else {
+        input.style.borderColor = 'green'; 
+        message.hidden = true;
+      }
+
+      return isValid;
+    }
+    function verificar() {
+      const valido = validarn();
+      if (!valido) {
+        alert('El campo no es válido.');
+      } else {
+        alert('El campo es válido');
+      }
+    }
+    
+    function validarapellidos() {
+      let isValid = false;
+
+      const input = document.forms['formulario']['apellidos'];
+
+      const message = document.getElementById('message2');
+
+      input.willValidate = false;
+      const pattern = new RegExp('');
+      if(!input.value) {
+        isValid = false;
+      } else {     
+          if(!pattern.test(input.value)){ 
+            isValid = false;
+          } else {
+            isValid = true;
+          }
+      }
+
+      if(!isValid) {
+        input.style.borderColor = 'red'; 
+        message2.hidden = false;
+      } else {
+        input.style.borderColor = 'green'; 
+        message2.hidden = true;
+      }
+
+      return isValid;
+    }
+    function verificar() {
+      const valido = validarapellidos();
+      if (!valido) {
+        alert('El campo no es válido.');
+      } else {
+        alert('El campo es válido');
+      }
+    }
+  
+    
+
+
+    
+
+</script></head> 
+
+
+<div style="background-color:MediumSeaGreen;color:black;padding:50px;">
+<h2><h1> <span style="color:#3c3c3c">FORMULARIO 
+</h2><p><span style="color:#3c3c3c">llena el formulario correctamente</p>
+
+
+</h2>
+</head>
+<body>
+
+
+<form id ="formulario" name ="formulario" class="formulario1" action="" method="get">
+
+
+ <div id="message" style="position: absolute; left: 60px; top: 213px; background-color:yellow; z-index: 10" hidden>Introduzca solo numeros
+    </div>
+    
+<div id="message2" style="position: absolute; left: 60px; top: 302px; background-color:yellow; z-index: 10" hidden>
+    </div>
+
+<p>
+<label for="nombre">Usuario:</label><br> <input onkeyup="validarn()" onblur="validarn()" type="text" name="nombre" id="nombre" maxlength="50" />
+</p>
+
+<br>    
+<p>
+<label for="apellidos">Clave:</label><br> <input onkeyup="validarapellidos()" onblur="validarapellidos()" type="text" name="apellidos" id="apellidos" maxlength="50" />
+</p>
+<br>
+<p>
+
+
+<p>
+<button type="button" onclick="verificar()">enviar</button>
+</p>
+</form>
+
+</body>
+</html>
+</div>
+
